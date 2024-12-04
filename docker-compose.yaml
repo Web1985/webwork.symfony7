@@ -11,7 +11,7 @@ services:
     ports:
       - "9000:9000"
     depends_on:
-      - db
+      - database
       - redis
 
   webserver:
@@ -25,7 +25,7 @@ services:
     depends_on:
       - app
 
-  db:
+  database:
     image: mysql:8.0
     container_name: symfony_db
     environment:
@@ -42,13 +42,13 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: symfony_phpmyadmin
     environment:
-      PMA_HOST: db
+      PMA_HOST: database
       PMA_USER: symfony_user
       PMA_PASSWORD: symfony_password
     ports:
       - "8081:80"
     depends_on:
-      - db
+      - database
 
   redis:
     image: redis:alpine
