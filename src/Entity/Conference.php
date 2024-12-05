@@ -21,19 +21,18 @@ class Conference
     #[ORM\Column(length: 4)]
     private ?string $year = null;
 
-    #[ORM\Column]
-    private ?bool $isInternational = null;
-
     /**
      * @var Collection<int, Comment>
      */
-    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference_ref', orphanRemoval: true)]
     private Collection $comments;
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
     }
+
+
 
     public function getId(): ?int
     {
@@ -64,18 +63,6 @@ class Conference
         return $this;
     }
 
-    public function isInternational(): ?bool
-    {
-        return $this->isInternational;
-    }
-
-    public function setInternational(bool $isInternational): static
-    {
-        $this->isInternational = $isInternational;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Comment>
      */
@@ -88,7 +75,7 @@ class Conference
     {
         if (!$this->comments->contains($comment)) {
             $this->comments->add($comment);
-            $comment->setConference($this);
+            $comment->setConferenceRef($this);
         }
 
         return $this;
@@ -98,8 +85,8 @@ class Conference
     {
         if ($this->comments->removeElement($comment)) {
             // set the owning side to null (unless already changed)
-            if ($comment->getConference() === $this) {
-                $comment->setConference(null);
+            if ($comment->getConferenceRef() === $this) {
+                $comment->setConferenceRef(null);
             }
         }
 
