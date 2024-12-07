@@ -28,6 +28,11 @@ class KnowlageBase
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $tags = null;
 
+    public function __toString()
+    {
+        return (string) $this->title;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

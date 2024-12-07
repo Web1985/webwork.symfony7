@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\KnowlageBase;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -11,11 +12,21 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class KnowlageBaseRepository extends ServiceEntityRepository
 {
+    public const KNOWLAGE_BASE_PER_PAGE = 2;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, KnowlageBase::class);
     }
 
+    public function getKnowlageBasePaginator(int $offset): Paginator {
+        $query = $this -> createQueryBuilder('k')
+        ->setFirstResult($offset)
+        ->setMaxResults(self::KNOWLAGE_BASE_PER_PAGE)
+        ->getQuery();
+        return new Paginator($query);
+
+
+    }
     //    /**
     //     * @return KnowlageBase[] Returns an array of KnowlageBase objects
     //     */
