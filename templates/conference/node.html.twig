@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConferenceController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>{{ conference }}! ✅</h1>
+    <div>
+ {% for comment in comments %}
+    <h4>{{ comment.author }}</h4>
+    <small>{{comment.createdAt|format_datetime('medium' , 'short') }}</small>
+    <div>{{ comment.text }}</div>
+{% endfor %}
+</div>
+<div class="pagger">
+    {% if previous %}
+        {{previous }}
+    {% endif %}
+    {% if next %}
+      {{next }}
+    {% endif %}
+</div>
+
+</div>
+{% endblock %}

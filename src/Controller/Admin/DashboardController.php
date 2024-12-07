@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Comment;
 use App\Entity\Conference;
+use App\Entity\KnowlageBase;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -46,8 +47,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'homepage');
-        yield MenuItem::linkToRoute('Conference', 'fas fa-home', Conference::class);
-        yield MenuItem::linkToRoute('Comment','fas fa-comment', Comment::class);
+        yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'home');
+        yield MenuItem::linkToCrud('Conference', 'fas fa-home', Conference::class);
+        yield MenuItem::linkToCrud('Comment','fas fa-comment', Comment::class);
+        yield MenuItem::linkToCrud('Knowlage Base','fa fa-solid fa-book', KnowlageBase::class);
     }
 }

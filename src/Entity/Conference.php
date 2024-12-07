@@ -32,7 +32,10 @@ class Conference
         $this->comments = new ArrayCollection();
     }
 
-
+    public function __toString()
+    {
+        return (string) $this->city . ' ' . $this->year;
+    }
 
     public function getId(): ?int
     {
@@ -75,7 +78,7 @@ class Conference
     {
         if (!$this->comments->contains($comment)) {
             $this->comments->add($comment);
-            $comment->setConferenceRef($this);
+            $comment->setConference($this);
         }
 
         return $this;
@@ -85,8 +88,8 @@ class Conference
     {
         if ($this->comments->removeElement($comment)) {
             // set the owning side to null (unless already changed)
-            if ($comment->getConferenceRef() === $this) {
-                $comment->setConferenceRef(null);
+            if ($comment->getConference() === $this) {
+                $comment->setConference(null);
             }
         }
 

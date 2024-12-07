@@ -33,9 +33,9 @@ class Comment
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $photoFilename = null;
 
-    #[ORM\ManyToOne(inversedBy: 'comments')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Conference $conference_ref = null;
+    public function __toString(): string {
+        return (string) $this-> author . ' ' . $this -> email;
+    }
 
     public function getId(): ?int
     {
@@ -114,15 +114,4 @@ class Comment
         return $this;
     }
 
-    public function getConferenceRef(): ?Conference
-    {
-        return $this->conference_ref;
-    }
-
-    public function setConferenceRef(?Conference $conference_ref): static
-    {
-        $this->conference_ref = $conference_ref;
-
-        return $this;
-    }
 }
