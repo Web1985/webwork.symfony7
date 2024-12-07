@@ -14,7 +14,7 @@
 				{% for node in knowlages %}
 					<li>
 						<h2>1{{ node.title }}</h2>
-						<div>2{{ node.content }}</div>
+						<div>2{{ node.content|nl2br }}</div>
 					</li>
 				</ul>
 			{% endfor %}
