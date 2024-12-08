@@ -1,0 +1,693 @@
+<p>
+    Вот переписанный docker-compose.yml файл, включающий GraphQL Playground и RedisInsight, а также настройку для сохранения данных баз данных при перезагрузке контейнеров.
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style=";font:26.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular_wdth_opsz1A0000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:26.00px;font-style:normal;"><strong>Файл docker-compose.yml</strong></span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">version:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">'3.8'</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">services:</span>
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># Drupal</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal:10</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"8080:80"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./drupal:/var/www/html</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">DRUPAL_DB_HOST:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">DRUPAL_DB_NAME:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">DRUPAL_DB_USER:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">DRUPAL_DB_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">depends_on:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">mysql:8.0</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">MYSQL_ROOT_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">root</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">MYSQL_DATABASE:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">MYSQL_USER:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">MYSQL_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"3306:3306"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db_data:/var/lib/mysql</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">phpmyadmin:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">phpmyadmin/phpmyadmin</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">phpmyadmin</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"8081:80"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">PMA_HOST:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">MYSQL_ROOT_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">root</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># Redis</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis:alpine</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"6379:6379"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis_data:/data</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redisinsight:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redisinsight:latest</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redisinsight</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"8001:8001"</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># GraphQL</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">graphql:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">node:16-alpine</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">graphql</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">working_dir:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">/app</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./graphql:/app</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"4000:4000"</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">command:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;"> [</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"npm"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">, </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"start"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">]</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">depends_on:</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">graphql_playground:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">graphql-playground</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">graphql_playground</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"4001:3000"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">GRAPHQL_PLAYGROUND_ENDPOINT:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">http://graphql:4000</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># WordPress</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress:latest</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"8082:80"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./wordpress:/var/www/html</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">WORDPRESS_DB_HOST:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">WORDPRESS_DB_NAME:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">WORDPRESS_DB_USER:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">WORDPRESS_DB_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">depends_on:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">postgres:latest</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">POSTGRES_USER:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">POSTGRES_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">POSTGRES_DB:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"5433:5432"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db_data:/var/lib/postgresql/data</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># Symfony</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">php:8.2-apache</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"8083:80"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./symfony:/var/www/html</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">SYMFONY_DB_HOST:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">SYMFONY_DB_NAME:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">SYMFONY_DB_USER:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">SYMFONY_DB_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">depends_on:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">postgres:latest</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">POSTGRES_USER:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">POSTGRES_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">POSTGRES_DB:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"5434:5432"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db_data:/var/lib/postgresql/data</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># React.js</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">react:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">build:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">context:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./react</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">react</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"3000:3000"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./react:/app</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">command:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;"> [</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"npm"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">, </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"start"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">]</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># Next.js</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">nextjs:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">build:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">context:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./nextjs</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">nextjs</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"3001:3000"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">./nextjs:/app</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">command:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;"> [</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"npm"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">, </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"run"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">, </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"dev"</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">]</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#5c6370;color:#5c6370;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><em><span style="font-family:&apos;Courier-Oblique&apos;;font-kerning:none;font-size:21.00px;font-weight:normal;"># pgAdmin</span></em>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">pgadmin:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #d19a66;color:#d19a66;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">image:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">dpage/pgadmin4</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">container_name:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">pgadmin</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">ports:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">"8084:80"</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">environment:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">PGADMIN_DEFAULT_EMAIL:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">admin@admin.com</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">PGADMIN_DEFAULT_PASSWORD:</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="-webkit-text-stroke:0px #98c379;color:#98c379;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">admin</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp;&nbsp;</span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">depends_on:</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db</span>
+</p>
+<p style="-webkit-text-stroke:#98c379;color:#98c379;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="-webkit-text-stroke:0px #61aeee;color:#61aeee;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">-</span><span style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:14.00px;font-style:normal;font-weight:normal;"> </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db</span>
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:14.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;min-height:14.0px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">volumes:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">drupal_db_data:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">wordpress_db_data:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">symfony_db_data:</span>
+</p>
+<p style="-webkit-text-stroke:#d19a66;color:#d19a66;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span class="Apple-converted-space" style="-webkit-text-stroke:0px #abb2bf;color:#abb2bf;font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">&nbsp; </span><span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">redis_data:</span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:26.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular_wdth_opsz1A0000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:26.00px;font-style:normal;"><strong>Изменения для сохранения данных:</strong></span>
+</p>
+<p style="font:17.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:19.5px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">1.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular_wdth_opsz180000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:24.00px;font-style:normal;"><strong>Tomcat для Redis:</strong></span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Добавлен volume </span><span style="font-family:&apos;Times New Roman&apos;;font-kerning:none;font-size:25.00px;font-style:normal;font-weight:normal;">redis_data:/data</span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;"> для сохранения данных Redis.</span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">2.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular_wdth_opsz180000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:24.00px;font-style:normal;"><strong>Базы данных MySQL и PostgreSQL:</strong></span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Используются volumes </span><span style="font-family:&apos;Times New Roman&apos;;font-kerning:none;font-size:25.00px;font-style:normal;font-weight:normal;">drupal_db_data</span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">, </span><span style="font-family:&apos;Times New Roman&apos;;font-kerning:none;font-size:25.00px;font-style:normal;font-weight:normal;">wordpress_db_data</span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">, </span><span style="font-family:&apos;Times New Roman&apos;;font-kerning:none;font-size:25.00px;font-style:normal;font-weight:normal;">symfony_db_data</span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;"> для сохранения данных MySQL и PostgreSQL.</span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">3.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular_wdth_opsz180000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:24.00px;font-style:normal;"><strong>GraphQL Playground:</strong></span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Добавлен отдельный сервис </span><span style="font-family:&apos;Times New Roman&apos;;font-kerning:none;font-size:25.00px;font-style:normal;font-weight:normal;">graphql_playground</span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;"> для визуального тестирования GraphQL-запросов. Он подключен к GraphQL-серверу через </span><span style="font-family:&apos;Times New Roman&apos;;font-kerning:none;font-size:25.00px;font-style:normal;font-weight:normal;">GRAPHQL_PLAYGROUND_ENDPOINT</span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">.</span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:26.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular_wdth_opsz1A0000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:26.00px;font-style:normal;"><strong>Как запустить:</strong></span>
+</p>
+<p style="font:17.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:19.5px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">1.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Создайте директории:</span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">mkdir drupal wordpress symfony graphql react nextjs</span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:17.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:19.5px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">2.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Настройте приложения в этих папках.</span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">3.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Запустите Docker Compose:</span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="-webkit-text-stroke:#abb2bf;color:#abb2bf;font:21.0px Courier;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;Courier&apos;;font-kerning:none;font-size:21.00px;font-style:normal;font-weight:normal;">docker-compose up -d</span>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:17.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:19.5px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">4.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Проверьте доступность сервисов:</span>
+</p>
+<p style="-webkit-text-stroke:#0000ee;color:#0000ee;font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 33.0px;text-indent:-33.0px;">
+    <span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">•</span><span class="Apple-tab-span" style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Drupal: </span><a href="http://localhost:8080/"><span style="-webkit-text-stroke:0px #0000ee;color:#0000ee;font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;text-decoration:underline;">http://localhost:8080</span></a>
+</p>
+<p style="-webkit-text-stroke:#0000ee;color:#0000ee;font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 33.0px;text-indent:-33.0px;">
+    <span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">•</span><span class="Apple-tab-span" style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">phpMyAdmin: </span><a href="http://localhost:8081/"><span style="-webkit-text-stroke:0px #0000ee;color:#0000ee;font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;text-decoration:underline;">http://localhost:8081</span></a>
+</p>
+<p style="-webkit-text-stroke:#0000ee;color:#0000ee;font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 33.0px;text-indent:-33.0px;">
+    <span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">•</span><span class="Apple-tab-span" style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">WordPress: </span><a href="http://localhost:8082/"><span style="-webkit-text-stroke:0px #0000ee;color:#0000ee;font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;text-decoration:underline;">http://localhost:8082</span></a>
+</p>
+<p style="-webkit-text-stroke:#0000ee;color:#0000ee;font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 33.0px;text-indent:-33.0px;">
+    <span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">•</span><span class="Apple-tab-span" style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Symfony: </span><a href="http://localhost:8083/"><span style="-webkit-text-stroke:0px #0000ee;color:#0000ee;font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;text-decoration:underline;">http://localhost:8083</span></a>
+</p>
+<p style="-webkit-text-stroke:#0000ee;color:#0000ee;font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 33.0px;text-indent:-33.0px;">
+    <span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">•</span><span class="Apple-tab-span" style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="-webkit-text-stroke:0px #fffffffont-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">RedisInsight: </span><a href="http://localhost:8001/"><span style="-webkit-text-stroke:0px #0000ee;color:#0000ee;font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;text-decoration:underline;">http://localhost:8001</span></a>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 33.0px;text-indent:-33.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">•</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">GraphQL Playground: </span><a href="http://localhost:4001/"><span style="-webkit-text-stroke:0px #0000ee;color:#0000ee;font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;text-decoration:underline;">http://localhost:4001</span></a>
+</p>
+<p style="-webkit-text-stroke:#000000;font:12.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:13.8px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:26.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular_wdth_opsz1A0000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:26.00px;font-style:normal;"><strong>Преимущества:</strong></span>
+</p>
+<p style="font:17.0px &apos;Times New Roman&apos;;margin:0.0px 0.0px 0.0px 0.0px;min-height:19.5px;">
+    <br>
+    &nbsp;
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">1.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular_wdth_opsz180000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:24.00px;font-style:normal;"><strong>Сохранение данных:</strong></span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Все данные сохраняются при перезапуске контейнеров.</span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">2.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular_wdth_opsz180000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:24.00px;font-style:normal;"><strong>Визуальный интерфейс:</strong></span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">RedisInsight и GraphQL Playground обеспечивают удобную работу с Redis и GraphQL.</span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 23.0px;text-indent:-23.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">3.</span><span class="Apple-tab-span" style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:17.00px;font-style:normal;font-weight:normal;white-space:pre;"> </span><span style="font-family:&apos;.SFUI-Regular_wdth_opsz180000_GRAD_wght2BC0000&apos;;font-kerning:none;font-size:24.00px;font-style:normal;"><strong>Масштабируемость:</strong></span>
+</p>
+<p style="font:24.0px &apos;.SF UI&apos;;margin:0.0px 0.0px 0.0px 0.0px;">
+    <span style="font-family:&apos;.SFUI-Regular&apos;;font-kerning:none;font-size:24.00px;font-style:normal;font-weight:normal;">Возможность добавить новые приложения или модули без значительных изменений.</span>
+</p>
+<p>
+    <br>
+    &nbsp;
+</p>
