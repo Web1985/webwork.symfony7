@@ -7,12 +7,18 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\PrePersist]
+    public function setCreatedAt(string $createdAt): void {
+        $this->createdAt = new \DateTimeImmutable($createdAt);
+    }
 
     #[ORM\Column(length: 255)]
     private ?string $author = null;
@@ -83,12 +89,6 @@ class Comment
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
 
     public function getConference(): ?Conference
     {
