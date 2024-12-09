@@ -16,10 +16,10 @@
 </div>
 <div class="pagger">
     {% if previous >= 0%}
-        <a href={{ path('conference', {id: conference.id, offset: previous}) }} class='btn'>Prev</a>
+        <a href={{ path('conference', {slug: conference.slug, offset: previous}) }} class='btn'>Prev</a>
     {% endif %}
     {% if next < comments|length %}
-        <a href={{ path('conference',  {id: conference.id, offset: next}) }} class='btn'>Next</a>
+        <a href={{ path('conference',  {slug: conference.slug, offset: next}) }} class='btn'>Next</a>
     {% endif %}
 </div>
 

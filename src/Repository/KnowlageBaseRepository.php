@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class KnowlageBaseRepository extends ServiceEntityRepository
 {
-    public const KNOWLAGE_BASE_PER_PAGE = 2;
+    public const KNOWLAGE_BASE_PER_PAGE = 10;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, KnowlageBase::class);
@@ -24,9 +24,17 @@ class KnowlageBaseRepository extends ServiceEntityRepository
         ->setMaxResults(self::KNOWLAGE_BASE_PER_PAGE)
         ->getQuery();
         return new Paginator($query);
-
-
     }
+
+    public function findAll(): array {
+
+        return $this->findBy([], ['title' => 'ASC']);
+    }
+
+    public function showTen(){
+      return $this->findBy([], ['title'=> 'ASC'],self::KNOWLAGE_BASE_PER_PAGE);
+    }
+
     //    /**
     //     * @return KnowlageBase[] Returns an array of KnowlageBase objects
     //     */

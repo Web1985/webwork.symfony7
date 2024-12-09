@@ -25,4 +25,5 @@ class KnowlageBaseController extends AbstractController
 
         ]);
     }
+
 }

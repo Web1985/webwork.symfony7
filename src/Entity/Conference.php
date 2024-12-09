@@ -27,7 +27,7 @@ class Conference
     /**
      * @var Collection<int, Comment>
      */
-    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference_ref', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference', orphanRemoval: true)]
     private Collection $comments;
 
     #[ORM\Column(length: 255, unique: true)]
@@ -43,7 +43,7 @@ class Conference
         return (string) $this->city . ' ' . $this->year;
     }
 
-    public function computeSlug(SluggerInterface $slugger): {
+    public function computeSlug(SluggerInterface $slugger) {
         if(!$this->slug ||$this->slug === '-')
         $this -> slug = $slugger->slug($this)->lower();
 

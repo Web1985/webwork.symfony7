@@ -1,2 +1,13 @@
 <h1>{{ title }}</h1>
-<h2>{{ get_name }}</h2>
+
+<div id="main">
+	{% if knowlage_base %}
+		<ul>
+			{% for node in knowlage_base %}
+				<li>
+					{{node.title }}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</div>
