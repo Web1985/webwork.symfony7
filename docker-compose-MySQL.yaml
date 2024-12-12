@@ -11,7 +11,7 @@ services:
     ports:
       - "9000:9000"
     depends_on:
-      - database
+      - db
       - redis
     build:
       context: .
@@ -29,9 +29,9 @@ services:
     depends_on:
       - app
 
-  database:
+  db:
     image: postgres:15
-    container_name: symfoby_postgres_db
+    container_name: postgres_db
     environment:
       POSTGRES_USER: symfony
       POSTGRES_PASSWORD: symfony
@@ -51,6 +51,31 @@ services:
     ports:
       - "5050:80"
     depends_on:
+      - db
+
+  database:
+    image: mysql:8.0
+    container_name: symfony_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony_user
+      MYSQL_PASSWORD: symfony_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: symfony_phpmyadmin
+    environment:
+      PMA_HOST: database
+      PMA_USER: symfony_user
+      PMA_PAdockSSWORD: symfony_password
+    ports:
+      - "8081:80"
+    depends_on:
       - database
 
   redis:
@@ -58,15 +83,6 @@ services:
     container_name: symfony_redis
     ports:
       - "6379:6379"
-
-
-  redisinsight:
-    image: redislabs/redisinsight:latest
-    container_name: redisinsight
-    ports:
-      - "8011:8001"
-    depends_on:
-      - redis
 
 volumes:
   db_data:
