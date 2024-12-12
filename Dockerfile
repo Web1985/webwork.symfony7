@@ -1,14 +1,20 @@
 FROM php:8.3-fpm
+
 RUN apt-get update && apt-get install -y \
-    libicu-dev \
-    && docker-php-ext-install intl \
-    && docker-php-ext-enable intl \
     libpq-dev \
+    libicu-dev \
     libzip-dev \
     unzip \
     git \
     libonig-dev \
-    && docker-php-ext-install pdo pdo_mysql
+    && docker-php-ext-install \
+    pdo \
+    pdo_pgsql \
+    pgsql \
+    intl \
+    pdo_mysql \
+    && docker-php-ext-enable intl
+
 # Очистите ненужные файлы
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
