@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-
 class KnowlageBaseController extends AbstractController
 {
     #[Route('/knowlage-base', name: 'knowlage_base')]
@@ -24,6 +23,15 @@ class KnowlageBaseController extends AbstractController
             'next' => $offset + KnowlageBaseRepository::KNOWLAGE_BASE_PER_PAGE,
 
         ]);
+    }
+
+    #[Route('/knowlage-base/{slug}', name: 'node')]
+    public function node( KnowlageBase $knowlageBase): Response {
+        return $this->render('knowlage_base/node.html.twig', [
+            'article' => $knowlageBase ->getTitle(),
+        ]);
+
+
     }
 
 }

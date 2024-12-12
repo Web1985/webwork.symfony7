@@ -35,6 +35,7 @@ class KnowlageBaseRepository extends ServiceEntityRepository
       return $this->findBy([], ['title'=> 'ASC'],self::KNOWLAGE_BASE_PER_PAGE);
     }
 
+
     //    /**
     //     * @return KnowlageBase[] Returns an array of KnowlageBase objects
     //     */

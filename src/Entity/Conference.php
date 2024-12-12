@@ -15,7 +15,7 @@ class Conference
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -43,9 +43,11 @@ class Conference
         return (string) $this->city . ' ' . $this->year;
     }
 
-    public function computeSlug(SluggerInterface $slugger) {
-        if(!$this->slug ||$this->slug === '-')
-        $this -> slug = $slugger->slug($this)->lower();
+    public function computeSlug(SluggerInterface $slugger)
+    {
+        if(!$this->slug ||$this->slug === '-'){
+            $this -> slug = $slugger->slug($this)->lower();
+        }
 
     }
     public function getId(): ?int
