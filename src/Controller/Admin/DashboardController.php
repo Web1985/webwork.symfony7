@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Book;
+use App\Entity\Category;
 use App\Entity\Comment;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -48,6 +49,8 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'home');
         yield MenuItem::linkToCrud('Book', 'fas fa-book', Book::class);
-        yield MenuItem::linkToCrud('Comment', 'fas fa-comment', Comment::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-tag', Category::class);
+
+        yield MenuItem::linkToCrud('Comments', 'fas fa-comment', Comment::class);
     }
 }

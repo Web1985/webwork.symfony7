@@ -22,9 +22,6 @@ class Book
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $Content = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $category = null;
-
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $created = null;
 
@@ -37,9 +34,18 @@ class Book
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'book', orphanRemoval: true)]
     private Collection $comments;
 
+    #[ORM\ManyToOne(inversedBy: 'books')]
+    #[ORM\JoinColumn(nullable: true)]
+    private ?Category $category = null;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this -> title;
     }
 
     public function getId(): ?int
@@ -143,4 +149,5 @@ class Book
 
         return $this;
     }
+
 }

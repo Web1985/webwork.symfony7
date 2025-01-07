@@ -1,4 +1,17 @@
+{% extends 'base.html.twig' %}
 
-<div id="main">
+{% block title%}
+	Home Page
+{% endblock %}
 
-</div>
+{% block body%}
+
+	<div id="main">
+        <h1>Home Page</h1>
+
+        {% for article in book %}
+            {{ article }}
+        {% endfor %}
+    </div>
+
+{% endblock %}

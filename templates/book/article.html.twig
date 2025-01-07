@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title%}
+	{{ article.title }}
+{% endblock %}
+
+{% block body%}
+
+	<div id="main">
+		<h1>
+			{{ article.title }}
+		</h1>
+        <h3>{{ article.category }}</h3>
+		<div>
+			{{ article.content | nl2br }}
+		</div>
+
+		{% if comments %}
+			<div class="comments">
+				<h2>Comments</h2>
+				{% for comment in comments %}
+					<div class="comment">
+						<div class="comment--title">
+							<div>{{ comment.author }}</div>
+							<div>{{ comment.email }}</div>
+						</div>
+						<div class="comment--body">
+							<div>{{ comment.text }}</div>
+						</div>
+						<div>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		{% endblock %}

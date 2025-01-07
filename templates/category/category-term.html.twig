@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+    {% block title%}
+        {{ category.title }}
+    {% endblock %}
+
+    {% block body%}
+
+        <div id="main">
+            <h1>{{ category.title }}</h1>
+
+            {% if articles %}
+
+            {% for article in articles %}
+               <div> {{ article.title }} </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+
+    {% endblock %}
