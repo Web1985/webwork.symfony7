@@ -1,17 +1,22 @@
 {% extends 'base.html.twig' %}
 
-    {% block title%}
-        {{ title }}
-    {% endblock %}
+{% block title%}
+	{{ title }}
+{% endblock %}
 
-    {% block body%}
+{% block body%}
 
-        <div id="main">
-            <h1>{{ title }}</h1>
+	<div id="main">
+		<h1>{{ title }}</h1>
+		<ul>
+			{% for category in categories %}
+				<li>
+					<a href="{{ path('category_term', {id:category.id}) }}">
+						{{ category.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 
-            {% for category in categories %}
-               <div> {{ category.title }} </div>
-            {% endfor %}
-        </div>
-
-    {% endblock %}
+{% endblock %}

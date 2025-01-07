@@ -1,17 +1,22 @@
 {% extends 'base.html.twig' %}
 
-    {% block title%}
-        {{ title }}
-    {% endblock %}
+{% block title%}
+	{{ title }}
+{% endblock %}
 
-    {% block body%}
+{% block body%}
 
-        <div id="main">
-            <h1>{{ title }}</h1>
+	<div id="main">
+		<h1>{{ title }}</h1>
+		<ul>
+			{% for article in book %}
+				<li>
+					<a href="{{ path('article', { id: article.id }) }}">
+						{{ article }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 
-            {% for article in book %}
-               <div> {{ article }} </div>
-            {% endfor %}
-        </div>
-
-    {% endblock %}
+{% endblock %}

@@ -11,6 +11,7 @@
 			{{ article.title }}
 		</h1>
         <h3>{{ article.category }}</h3>
+        <small>{{ article.created|format_datetime('medium', 'short') }}</small>
 		<div>
 			{{ article.content | nl2br }}
 		</div>

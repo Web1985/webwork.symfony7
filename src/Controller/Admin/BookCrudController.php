@@ -38,8 +38,8 @@ class BookCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield NumberField::new(propertyName: 'id');
+        yield AssociationField::new(propertyName: 'category');
         yield TextField::new(propertyName: 'title');
-        yield TextField::new('category');
         yield TextareaField::new('content')
             ->hideOnIndex()
         ;

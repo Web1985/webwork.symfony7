@@ -84,12 +84,12 @@ class Book
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
 
-    public function setCategory(?string $category): static
+    public function setCategory(?Category $category): static
     {
         $this->category = $category;
 
