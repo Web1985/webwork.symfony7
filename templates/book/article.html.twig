@@ -10,8 +10,8 @@
 		<h1>
 			{{ article.title }}
 		</h1>
-        <h3>{{ article.category }}</h3>
-        <small>{{ article.created|format_datetime('medium', 'short') }}</small>
+		<h3>{{ article.category }}</h3>
+		<small>{{ article.created|format_datetime('medium', 'short') }}</small>
 		<div>
 			{{ article.content | nl2br }}
 		</div>
@@ -28,9 +28,19 @@
 						<div class="comment--body">
 							<div>{{ comment.text }}</div>
 						</div>
-						<div>
-						{% endfor %}
-					{% endif %}
-				</div>
+					</div>
+				{% endfor %}
 			</div>
-		{% endblock %}
+
+            {% if previous >= 0 %}
+                <a href="{{ path('article', {id:article.id, offset: previous}) }}">Previous</a>
+            {% endif %}
+
+            {% if next < comments|length %}
+                <a href="{{ path('article', {id:article.id, offset: next}) }}">Next</a>
+            {% endif %}
+
+		{% endif %}
+
+	</div>
+{% endblock %}

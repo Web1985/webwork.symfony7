@@ -37,12 +37,12 @@ class BookCrudController extends AbstractCrudController
     }
     public function configureFields(string $pageName): iterable
     {
-        yield NumberField::new(propertyName: 'id');
         yield AssociationField::new(propertyName: 'category');
         yield TextField::new(propertyName: 'title');
         yield TextareaField::new('content')
             ->hideOnIndex()
         ;
+        yield TextField::new(propertyName: 'slug');
 
         $createdAt = DateTimeField::new('created')->setFormTypeOptions([
             'years' => range(date('Y'), date('Y') + 5),

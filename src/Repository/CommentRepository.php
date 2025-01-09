@@ -2,18 +2,33 @@
 
 namespace App\Repository;
 
+use App\Entity\Book;
 use App\Entity\Comment;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Comment>
  */
 class CommentRepository extends ServiceEntityRepository
 {
+    public const COMMENTS_PER_PAGE = 1;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Comment::class);
+    }
+
+    public function getCommentsPaginator(Book $book, int $offset): Paginator
+    {
+        $query = $this->createQueryBuilder('c')
+            ->andWhere('c.book = :book')
+            ->setParameter('book', $book)
+            ->orderBy('c.created', 'DESC')
+            ->setMaxResults(self::COMMENTS_PER_PAGE)
+            ->setFirstResult($offset)
+            ->getQuery();
+        return new Paginator($query);
     }
 
     //    /**

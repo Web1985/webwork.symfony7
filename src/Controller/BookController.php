@@ -3,30 +3,36 @@
 namespace App\Controller;
 
 use App\Entity\Book;
-use Twig\Environment;
 use App\Repository\BookRepository;
 use App\Repository\CommentRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Bundle\TwigBundle\DependencyInjection\Compiler\TwigEnvironmentPass;
 
 class BookController extends AbstractController
 {
     #[Route('/book', name: 'app_book')]
-    public function index(Environment $twig, BookRepository $bookRepository): Response
+    public function index(BookRepository $bookRepository): Response
     {
-        return new Response($twig -> render('book/index.html.twig', [
+        return $this -> render('book/index.html.twig', [
             'title' => 'Book',
             'book' => $bookRepository->findAll(),
-        ]));
+        ]);
     }
 
     #[Route(path: '/book/{id}', name: 'article')]
-    public function article(Environment $twig, Book $book, CommentRepository $commentRepository): Response {
-        return new Response($twig -> render( 'book/article.html.twig', [
+    public function article(Request $request, Book $book, CommentRepository $commentRepository): Response {
+
+        $offset = max(0, $request -> query -> getInt('offset') );
+        $paginator = $commentRepository -> getCommentsPaginator($book, $offset);
+
+        return $this -> render( 'book/article.html.twig', [
            'article' => $book,
-           'comments' => $commentRepository -> findBy(['book' => $book])
-        ] ));
+           'comments' => $paginator,
+           'previous' => $offset - CommentRepository::COMMENTS_PER_PAGE,
+           'next' => $offset + CommentRepository::COMMENTS_PER_PAGE
+        ] );
     }
 }
