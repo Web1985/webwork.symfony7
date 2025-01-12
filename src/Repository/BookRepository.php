@@ -32,7 +32,7 @@ class BookRepository extends ServiceEntityRepository
 
         $query = $this->createQueryBuilder('b')
             ->andWhere('b.category = :category')
-            ->setParameter('category', $category)
+            ->setParameter('category', $category->getId())
             ->setFirstResult($offset)
             ->setMaxResults(self::ARTICLES_PER_PAGE)
             ->orderBy('b.title')

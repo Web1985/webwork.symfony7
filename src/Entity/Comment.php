@@ -2,17 +2,23 @@
 
 namespace App\Entity;
 
-use App\Repository\CommentRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CommentRepository;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Comment
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\PrePersist]
+    public function setCreatedValue() {
+        $this -> created = new \DateTimeImmutable();
+    }
 
     #[ORM\Column(length: 255)]
     private ?string $author = null;

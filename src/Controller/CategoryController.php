@@ -12,23 +12,24 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CategoryController extends AbstractController
 {
+    public $title = 'Categories';
     #[Route('/category', name: 'category')]
     public function index(CategoryRepository $categoryRepository): Response
     {
-        return $this -> render('category/index.html.twig', [
+        return $this -> render('pages/category/index.html.twig', [
             'title' => 'Categories',
             'categories' => $categoryRepository->findAll(),
         ]);
     }
 
 
-    #[Route(path: '/category/{id}', name: 'category_term')]
+    #[Route(path: '/category/{slug}', name: 'category_item')]
     public function categoryTerm(Request $request, Category $category, BookRepository $bookRepository): Response
     {
         $offset =  max(0, $request -> query -> getInt('offset'));
         $pagginator = $bookRepository -> getBookPaginator($category, $offset);
 
-        return $this->render('category/category-term.html.twig', [
+        return $this->render('pages/category/category-term.html.twig', [
             'category' => $category,
             'articles' => $pagginator,
             'previous' => $offset - BookRepository::ARTICLES_PER_PAGE,

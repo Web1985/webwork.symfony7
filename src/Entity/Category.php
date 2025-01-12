@@ -7,8 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[ORM\HasLifecycleCallbacks]
+#[UniqueEntity('slug')]
 class Category
 {
     #[ORM\Id]
@@ -16,10 +20,15 @@ class Category
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\PrePersist]
+    public function setCreatedValue(){
+        $this -> created = new \DateTimeImmutable();
+    }
+
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -37,6 +46,14 @@ class Category
     public function __construct()
     {
         $this->book = new ArrayCollection();
+    }
+
+    public function computeSlug(SluggerInterface $slugger){
+        if(!$this -> slug) {
+            $this -> slug  = (string) $slugger ->slug( (string) $this) ->lower();
+
+        }
+
     }
 
     public function __toString()

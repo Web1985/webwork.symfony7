@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/base.html.twig' %}
 
 {% block title%}
 	{{ category.title }}
@@ -20,11 +20,11 @@
 				{% endfor %}
 			</ul>
             {% if previous >= 0 %}
-            <a href="{{ path('category_term', { id: category.id, offset: previous }) }}">previous</a>
+            <a href="{{ path('category_item', { slug: category.slug, offset: previous }) }}">previous</a>
             {% endif %}
 
             {% if next <  articles|length %}
-            <a href="{{ path('category_term', {id: category.id, offset: next }) }}">next</a>
+            <a href="{{ path('category_item', {slug: category.slug, offset: next }) }}">next</a>
             {% endif %}
 		{% endif %}
 	</div>

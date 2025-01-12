@@ -16,7 +16,7 @@ class BookController extends AbstractController
     #[Route('/book', name: 'app_book')]
     public function index(BookRepository $bookRepository): Response
     {
-        return $this -> render('book/index.html.twig', [
+        return $this -> render('pages/book/index.html.twig', [
             'title' => 'Book',
             'book' => $bookRepository->findAll(),
         ]);
@@ -28,7 +28,7 @@ class BookController extends AbstractController
         $offset = max(0, $request -> query -> getInt('offset') );
         $paginator = $commentRepository -> getCommentsPaginator($book, $offset);
 
-        return $this -> render( 'book/article.html.twig', [
+        return $this -> render( 'pages/book/article.html.twig', [
            'article' => $book,
            'comments' => $paginator,
            'previous' => $offset - CommentRepository::COMMENTS_PER_PAGE,

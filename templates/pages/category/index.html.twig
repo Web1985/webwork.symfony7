@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/base.html.twig' %}
 
 {% block title%}
 	{{ title }}
@@ -11,7 +11,7 @@
 		<ul>
 			{% for category in categories %}
 				<li>
-					<a href="{{ path('category_term', {id:category.id}) }}">
+					<a href="{{ path('category_item', {slug:category.slug}) }}">
 						{{ category.title }}
 					</a>
 				</li>

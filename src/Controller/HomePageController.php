@@ -11,7 +11,7 @@ class HomePageController extends AbstractController {
 
         $title = "Home page";
 
-        return $this-> render('home.html.twig', [
+        return $this-> render('pages/home.html.twig', [
             'title'=> $title,
         ]);
     }
